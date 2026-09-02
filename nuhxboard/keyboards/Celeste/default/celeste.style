@@ -1,0 +1,715 @@
+{
+  "BackgroundColor": {
+    "Blue": 255,
+    "Green": 255,
+    "Red": 255
+  },
+  "BackgroundImageFileName": "blank.png",
+  "DefaultKeyStyle": {
+    "Loose": {
+      "Background": {
+        "Blue": 73,
+        "Green": 0,
+        "Red": 73
+      },
+      "BackgroundImageFileName": "null",
+      "Font": {
+        "DownloadUrl": null,
+        "FontFamily": "Jetbrains Mono",
+        "Size": 20.25,
+        "Style": 0
+      },
+      "Outline": {
+        "Blue": 0,
+        "Green": 0,
+        "Red": 0
+      },
+      "OutlineWidth": 2,
+      "ShowOutline": true,
+      "Text": {
+        "Blue": 255,
+        "Green": 255,
+        "Red": 255
+      }
+    },
+    "Pressed": {
+      "Background": {
+        "Blue": 255,
+        "Green": 255,
+        "Red": 255
+      },
+      "BackgroundImageFileName": "null",
+      "Font": {
+        "DownloadUrl": null,
+        "FontFamily": "JetBrains Mono",
+        "Size": 15,
+        "Style": 0
+      },
+      "Outline": {
+        "Blue": 255,
+        "Green": 255,
+        "Red": 255
+      },
+      "OutlineWidth": 2,
+      "ShowOutline": true,
+      "Text": {
+        "Blue": 0,
+        "Green": 0,
+        "Red": 0
+      }
+    }
+  },
+  "DefaultMouseSpeedIndicatorStyle": {
+    "InnerColor": {
+      "Blue": 100,
+      "Green": 100,
+      "Red": 100
+    },
+    "OuterColor": {
+      "Blue": 255,
+      "Green": 255,
+      "Red": 255
+    },
+    "OutlineWidth": 1
+  },
+  "ElementStyles": [
+    {
+      "Key": 1,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "grab_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "grab_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 2,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "dash_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "dash_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 3,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "jump_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "jump_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 4,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "demo_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "demo_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 5,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "jump2_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "jump2_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 6,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "jump3_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "jump3_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 7,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "cpop_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "cpop_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 8,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "left_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "left_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 9,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "down_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "down_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 10,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "right_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "right_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    },
+    {
+      "Key": 11,
+      "Value": {
+        "__type": "KeyStyle",
+        "Loose": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "up_unpressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          }
+        },
+        "Pressed": {
+          "Background": {
+            "Blue": 255,
+            "Green": 255,
+            "Red": 255
+          },
+          "BackgroundImageFileName": "up_pressed.png",
+          "Font": {
+            "DownloadUrl": null,
+            "FontFamily": "JetBrains Mono",
+            "Size": 15,
+            "Style": 0
+          },
+          "Outline": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          },
+          "OutlineWidth": 1,
+          "ShowOutline": false,
+          "Text": {
+            "Blue": 0,
+            "Green": 0,
+            "Red": 0
+          }
+        }
+      }
+    }
+  ]
+}

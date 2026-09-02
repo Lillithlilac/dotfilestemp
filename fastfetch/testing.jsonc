@@ -1,0 +1,106 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/RivSleep.png",
+    "position": "left",
+    "padding": {
+      "right": 1,
+      "top": 1
+    }
+  },
+  "display": {
+    "separator": "",
+    "color": {
+      "keys": "magenta",
+      "title": "blue"
+    },
+    "key": {
+      "width": 14 //remember to change this when you change linelen in the custom module lua config thing. Add 3 to that number for format string to just touch, add more for padding :]
+    },
+    "bar": {
+      "width": 8,
+      "char": {
+        "elapsed": "\u25a0",
+        "total": "-"
+      }
+    },
+    "percent": {
+      "type": 3,
+      "color": {
+        "green": "magenta",
+        "yellow": "light_blue",
+        "red": "light_red"
+      }
+    },
+    "constants": [
+      "lua: line = ;"
+    ]
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "lua: linelen = 10; formatlen = 60; formatline = string.rep('─', formatlen); line = string.rep('─', linelen); columns = string.format('\u001b[37m│%s│%s│\u001b[%dD\u001b[m\u001b[%dD', string.rep(' ', linelen), string.rep(' ', formatlen), formatlen + 1, linelen/2 + 1)"
+    },
+    "break",
+    {
+      "type": "title",
+      "format": "lua: local args = ...; local nameoffset = math.ceil(linelen/2 + 1) + math.ceil(string.len(args.userName)/2); return string.format('\u001b[37m╭%s┬%s╮\u001b[%dD\u001b[m\u001b[%dD\u001b[94m%s',line, formatline, formatlen + 1, nameoffset, string.upper(args.userName))" 
+    },
+    {
+      "type": "os",
+      "key": "lua: local args = ...; local text = 'OS'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)",
+      "format": "{name} {version-id}"
+    },
+    {
+      "type": "host",
+      "key": "lua: local args = ...; local text = 'Host'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)",
+      // "format": "lua: return json_encode(..., true)"
+    },
+    {
+      "type": "kernel",
+      "key": "lua: local args = ...; local text = 'Kernel'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)",
+      // "format": "lua: return json_encode(..., true)"
+    },
+    {
+      "type": "packages",
+      "key": "lua: local args = ...; local text = 'Packages'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)"
+    },
+    {
+      "type": "shell",
+      "key": "lua: local args = ...; local text = 'Shell'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)"
+    },
+    {
+      "type": "wm",
+      "key": "lua: local args = ...; local text = 'WM'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)",
+      "format": "{process-name} {version}"
+    },
+    {
+      "type": "font",
+      "key": "lua: local args = ...; local text = 'Font'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)"
+    },
+    {
+      "type": "cpu",
+      "key": "lua: local args = ...; local text = 'CPU'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)"
+    },
+    {
+      "type": "gpu",
+      "key": "lua: local args = ...; local text = 'GPU'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)"
+    },
+    {
+      "type": "memory",
+      "key": "lua: local args = ...; local text = 'Memory'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)"
+    },
+    {
+      "type": "disk",
+      "key": "lua: local args = ...; local text = 'Disk'; return string.format('%s\u001b[35m\u001b[%dD%s', columns, math.ceil(string.len(text)/2), text)"
+    },
+    {
+      "type": "custom",
+      "key": "lua: return string.format('\u001b[37m╰%s┴%s╯',line, formatline)"
+    },
+    {
+      "type": "custom",
+      "key": "lua: return string.format('\u001b[%dC\u001b[31m● \u001b[32m● \u001b[33m● \u001b[34m● \u001b[35m● \u001b[36m● \u001b[37m●', math.ceil((linelen + formatlen+3-14)/2))"
+    }
+  ]
+}

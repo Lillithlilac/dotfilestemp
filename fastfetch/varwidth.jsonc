@@ -1,0 +1,96 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "none"
+  },
+  "display": {
+    "separator": "",
+    "color": {
+      "keys": "magenta",
+      "title": "blue"
+    },
+    "key": {
+      "width": 20 //remember to change this when you change linelen in the custom module lua config thing. Add 3 to that number for format string to just touch, add more for padding :]
+    },
+    "bar": {
+      "width": 8,
+      "char": {
+        "elapsed": "\u25a0",
+        "total": "-"
+      }
+    },
+    "percent": {
+      "type": 3,
+      "color": {
+        "green": "\u001b[38;2;193;128;255m",
+        "yellow": "\u001b[38;2;242;160;221m",
+        "red": "\u001b[38;2;230;230;230m"
+      }
+    }
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "lua: icons = false"
+    },
+    {
+      "type": "custom",
+      "format": "lua: len = {}; values = {}"
+    },
+    {
+      "type": "os",
+      "key": "lua: local args = ...; keytemp = ''; if icons then keytemp = args.icon else keytemp = 'OS' end",
+      "format": "lua: local args = ...; local key = keytemp; local format = args.name; values[key] = format; table.insert(len, string.len(format))"
+    },
+    {
+      "type": "kernel",
+      "key": "lua: local args = ...; keytemp = ''; if icons then keytemp = args.icon else keytemp = 'Kernel' end",
+      "format": "lua: local args = ...; local key = keytemp; local format = args.sysname .. ' ' .. args.release; values['test'] = format; table.insert(len, string.len(format))"
+    },
+//   {
+//     "type": "packages",
+//     // "format": "lua: return json_encode(..., true)"
+//     "format": "lua: local args = ...; local output = ''; for k, v in pairs(args) do if not (v == 0 or v=='' or k=='all' or string.find(k, 'All')) then output = output .. v .. ' (' .. k .. ') ' end end; table.insert(len, string.len(output)); return output"
+//   },
+//   {
+//     "type": "shell",
+//     "format": "lua: local args = ...; local output = args.prettyName .. ' ' .. args.version; table.insert(len, string.len(output)); return output"
+//   },
+//   {
+//     "type": "wm",
+//     "format": "lua: local args = ...; local output = args.prettyName .. ' ' .. args.version; table.insert(len, string.len(output)); return output"
+//   },
+//   {
+//     "type": "font",
+//     "format": "lua: local args = ...; table.insert(len, string.len(args.combined)); return args.combined"
+//   },
+//   {
+//     "type": "terminalfont",
+//     "format": "lua: local args = ...; local output = args.name; table.insert(len, string.len(output)); return output"
+//   },
+//   {
+//     "type": "cpu",
+//     "format": "lua: local args = ...; local output = string.format('%s (%s) @ %s', args.name, args.coreTypes, args.freqMax); table.insert(len, string.len(output)); return output"
+//   },
+//   {
+//     "type": "gpu",
+//     "format": "lua: local args = ...; local output = args.name; table.insert(len, string.len(output)); return output"
+//   },
+//   {
+//     "type": "memory",
+//     "format": "lua: return json_encode(..., true)"
+//   },
+//   {
+//     "type": "disk",
+//     "format": "lua: return json_encode(..., true)"
+//   },
+//   {
+//     "type": "custom",
+//     "format": "lua: return 'the max width of any value is: ' .. math.max(table.unpack(len))"
+//   }
+    {
+      "type": "custom",
+      "format": "lua: output = ''; for k, v in pairs(values) do output = output .. k .. '\u001b[10G' .. v end; return output"
+    }
+  ]
+}

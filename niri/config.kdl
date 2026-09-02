@@ -1,0 +1,13 @@
+// This config is in the KDL format: https://kdl.dev
+// Find the full list of options on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Input
+
+include "noctaliasettings.kdl"
+include "keybinds.kdl"
+include "options.kdl"
+include "windowrule.kdl"
+include "layout.kdl"
+include "layerrule.kdl"
+include "input.kdl"
+include "startup.kdl"
+include "output.kdl"

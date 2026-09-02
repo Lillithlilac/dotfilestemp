@@ -1,0 +1,61 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/RivSleep.png",
+    "position": "right"
+  },
+  "display": {
+    "separator": "",
+    "color": {
+      "keys": "magenta",
+      "title": "blue"
+    },
+    "key": {
+      "width": 15 //remember to change this when you change linelen in the custom module lua config thing, just add 3 to that number
+    },
+    "bar": {
+      "width": 8,
+      "char": {
+        "elapsed": "\u25a0",
+        "total": "-"
+      }
+    },
+    "percent": {
+      "type": 3,
+      "color": {
+        "green": "light_magenta",
+        "yellow": "light_blue",
+        "red": "light_red"
+      }
+    },
+    "constants": [
+      "lua: line = ;"
+    ]
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "lua: linelen = 12; line = string.rep('─', linelen); columns = string.format('│%s│\u001b[%dD', string.rep(' ', linelen), linelen/2 + 1)"
+    },
+    "break",
+    {
+      "type": "title",
+      "format": "lua: local args = ...; local nameoffset = math.ceil(linelen/2 + 1) + math.ceil(string.len(args.userName)/2); return string.format('╭%s╮\u001b[%dD%s',line, nameoffset, args.userNameColored)" 
+      // "format": "lua: return json_encode(..., true)"
+    },
+    {
+      "type": "os",
+      "key": "lua: local args = ...; local text = 'tama'; return string.format('%s\u001b[%dD%s', columns, string.len(text)/2, text)"
+    },
+    "host",
+    "kernel",
+    "packages",
+    "shell",
+    "wm",
+    "font",
+    "cpu",
+    "gpu",
+    "memory",
+    "disk"
+  ]
+}

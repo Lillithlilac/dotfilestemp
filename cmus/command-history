@@ -1,0 +1,47 @@
+q
+set progress_bar=line
+set progress_bar=shu
+set progress_bar=shuttle
+set progress_bar=
+set progress_bar=color
+set progress_bar=bar
+set tree_width_percent=30
+set tree_width_percent=40
+save ~/Playlists/dimethyl-aether.m3u
+add ~/Music/
+save ~/Playlists/rock-metal-affine-variety.m3u
+pl-create dimethyl-aether
+pl-save
+live-filter 
+clear
+rm halestorm
+remove Halestorm
+pl-create rock-metal-affine-variety
+pl-delete rock-metal-affine-variety
+pl-delete rock
+pl-delete
+pl-create
+h
+h pl
+pl h
+pl-remove rock
+u
+undo
+bind common P pl-create
+bind common <key> pl-createP
+update-cache
+update
+add ~/music/
+pl-create rock/metal-affine-variety
+playlist-add rock/metal-affine-variety
+playlist
+add ~/Music
+reload
+qq
+add
+colorscheme catppuccin
+colorscheme catppuccin-mocha
+colorscheme
+colorscheme 
+colorscheme catppucin-mocha
+colorscheme dracula

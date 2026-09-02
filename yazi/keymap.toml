@@ -1,0 +1,26 @@
+[mgr]
+prepend_keymap = [
+  {on = ["g", "s", "m"], run = "cd ~/Documents/Manga", desc = "Open manga folder"},
+  {on = ["g", "s", "v"], run = "cd ~/Videos", desc = "Open video folder"},
+  {
+    on   = "l",
+    run  = "plugin smart-enter",
+    desc = "Enter the child directory, or open the file"
+  },
+  {
+    on   = [ "t", "t" ],
+    run  = "plugin smart-tab",
+    desc = "Create a tab and enter the hovered directory"
+  },
+  {
+    desc = "Start bunny.yazi",
+    on = "b",
+    run = "plugin bunny"
+  },
+# Optionally, add another keymap to immediately fuzzy search bookmarks
+  {
+    desc = "Start bunny.yazi fuzzy search",
+    on = "'",
+    run = "plugin bunny fuzzy"
+  }
+]

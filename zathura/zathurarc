@@ -1,0 +1,20 @@
+set default-bg "rgba(39, 39, 57, 0)"
+set inputbar-bg "rgba(39, 39, 57, 0)"
+set notification-fg "rgba(39, 39, 57, 0)"
+set statusbar-bg "rgba(39, 39, 57, 0)"
+set statusbar-fg "rgba(39, 39, 57, 0)"
+set default-fg "rgba(39, 39, 57, 0)"
+set smoothscroll true
+set smooth-scroll true
+set guioptions ""
+map w zoom "page-height"
+map q quit
+unmap f
+map f toggle_fullscreen
+map i toggle_index
+set selection-clipboard clipboard
+map [fullscreen] f toggle_fullscreen
+unmap j
+unmap k
+map j navigate next
+map k navigate previous

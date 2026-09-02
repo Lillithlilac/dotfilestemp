@@ -1,0 +1,118 @@
+// layout settings :] 
+
+layout {
+    // Set gaps around windows in logical pixels.
+    gaps 7 
+
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    center-focused-column "never"
+    always-center-single-column true
+
+    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
+    preset-column-widths {
+        // Proportion sets the width as a fraction of the output width, taking gaps into account.
+        // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
+        // The default preset widths are 1/3, 1/2 and 2/3 of the output.
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+
+        // Fixed sets the width in logical pixels exactly.
+        // fixed 1920
+    }
+    preset-window-heights {
+    
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    
+    }
+
+    focus-ring {
+        off 
+        // on
+        active-gradient  from="#F2A0DD" to="#A866FF" angle=-30
+        inactive-gradient from="#410482" to="#112057" angle=-30
+        urgent-color   "#ed8796"
+        width 3
+    }
+
+    // border {
+    //     active-color   "#c6a0f6"
+    //     inactive-color "#24273a"
+    //     urgent-color   "#ed8796"
+    // }
+
+    border {
+        on
+        // off
+        active-gradient  from="#F2A0DD" to="#A866FF" angle=-30 in="oklab"
+        inactive-gradient from="#1F156BE0" to="#683587E0" angle=-45 relative-to="workspace-view"
+        urgent-color   "#ed8796"
+        width 3
+    }
+
+    tab-indicator {
+        // active-color   "#c6a0f6"
+        // inactive-color "#6503e1"
+        // urgent-color   "#ed8796"
+        active-gradient  from="#F2A0DD" to="#A866FF" angle=-30 in="oklab"
+        inactive-gradient from="#410482ba" to="#AB41ABba" angle=-45 
+        place-within-column
+        width 5
+        gap 3
+        gaps-between-tabs 20
+        corner-radius 10
+        length total-proportion=0.25
+    }
+
+    insert-hint {
+        off 
+        color "#c6a0f680"
+    }
+
+    // You can also customize the heights that "switch-preset-window-height" (Mod+Ctrl+Shift+R) toggles between.
+
+    default-column-width { proportion 0.5; }
+
+    shadow {
+        // on
+        // draw-behind-window true
+        softness 10
+        spread 10
+        offset x=5 y=5
+        color "#18192670"
+    }
+
+    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
+    // You can think of them as a kind of outer gaps. They are set in logical pixels.
+    // Left and right struts will cause the next window to the side to always be visible.
+    // Top and bottom struts will simply add outer gaps in addition to the area occupied by
+    // layer-shell panels and regular gaps.
+    struts {
+        // left 5
+        // right 5
+        // top 5
+        // bottom 5
+    }
+}
+recent-windows {
+  open-delay-ms 250
+  highlight {
+      active-color "#c6a0f640"
+      corner-radius 10
+      padding 5
+      urgent-color "#ed8796"
+  }
+  previews {
+      max-height 400
+      max-scale 0.75
+  }
+}

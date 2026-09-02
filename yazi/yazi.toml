@@ -1,0 +1,40 @@
+[mgr]
+show_hidden = true
+ratio = [2,5,3]
+sort_dir_first = true
+linemode = "size"
+
+
+
+[opener]
+zathuraopen = [
+    { run = 'zathura %S', orphan = true, desc = "opens pdfs with zathura"}
+]
+imagekitty = [
+    { run = 'kitten icat "%s"', desc = "use kitty (via kitten icat) to display images"}
+]
+edit = [
+    { run = "kitty -- nvim %s", orphan = true, desc = "opens with nvim"}
+]
+video = [
+    {run = "mpv %s", blocking = true, desc = "open video"}
+]
+
+[open]
+prepend_rules = [
+    {url = "*.pdf", use = "zathuraopen" },
+    {url = "*.cbz", use = "zathuraopen" },
+    # {url = "*.mkv", use = "video"},
+    # {url = "*.mp4", use = "video"},
+    # {url = "*.mov", use = "video"},
+    # {url = "*.webm", use = "video"},
+]
+
+[plugin]
+prepend_previewers = [
+  { url = "*.cb{z,r}", run = "preview-cbz" },
+]
+
+prepend_preloaders = [
+  { url = "*.cb{z,r}", run = "preview-cbz" },
+]

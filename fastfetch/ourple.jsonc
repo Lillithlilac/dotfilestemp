@@ -1,0 +1,125 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/RivSleep.png",
+    "position": "left",
+    "padding": {
+      "right": 1,
+      "left": 2,
+      "top": 2
+    },
+    "height": 12
+  },
+  "display": {
+    "separator": "",
+    "color": {
+      "keys": "magenta",
+      "title": "blue"
+    },
+    "key": {
+      "width": 13 //remember to change this when you change linelen in the custom module lua config thing. Add 3 to that number for format string to just touch, add more for padding :]
+    },
+    "bar": {
+      "width": 8,
+      "char": {
+        "elapsed": "\u25a0",
+        "total": "-"
+      }
+    },
+    "percent": {
+      "type": 3,
+      "color": {
+        "green": "\u001b[38;2;193;128;255m",
+        "yellow": "\u001b[38;2;242;160;221m",
+        "red": "\u001b[38;2;230;230;230m"
+      }
+    }
+  },
+  "modules": [
+    {
+      "type": "custom",
+      // set the box sizes below by changing linelen and formatlen. Linelen is the length for the key box, and format len is the length of the box holding the values. They're independant, so you can fiuddle with them as you please
+      "format": "lua: linelen = 8; formatlen = 60; icons = true; keycolor = '\u001b[38;2;193;128;255m'; namecolor = '\u001b[94m\u001b[1m'; linecolor = '\u001b[38;2;193;128;255m'"
+    },
+    {
+      // General macros, dont recommend changing these unless you wanna change the characters used
+      "type": "custom",
+      "format": "lua: formatline = string.rep('─', formatlen); line = string.rep('─', linelen); columns = string.format('%s│%s│%s│\u001b[%dD\u001b[m\u001b[%dD',linecolor, string.rep(' ', linelen), string.rep(' ', formatlen), formatlen + 1, linelen/2 + 1)"
+    },
+    "break",
+    //swap out title for custom to have your name embedded in the middle of the line above the keys section
+    //{
+    //  "type": "title",
+    //  "format": "lua: local args = ...; local nameoffset = math.ceil(linelen/2 + 1) + math.ceil(string.len(args.userName)/2); return string.format('%s╭%s┬%s╮\u001b[%dD\u001b[m\u001b[%dD%s%s', linecolor, line, formatline, formatlen + 1, nameoffset, namecolor, string.upper(args.userName))" 
+    //},
+    {
+      "type": "custom",
+      "format": "lua: return string.format('%s╭%s┬%s╮',linecolor,line, formatline)" 
+    },
+    {
+      "type": "custom",
+      "key": "lua: return columns  "
+    },
+    {
+      "type": "os",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='OS' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)",
+      "format": "{name} {version-id}"
+    },
+    {
+      "type": "host",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='Host' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)"
+      // "format": "lua: return json_encode(..., true)"
+    },
+    {
+      "type": "kernel",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='Kernel' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)"
+      // "format": "lua: return json_encode(..., true)"
+    },
+    {
+      "type": "packages",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='Packages' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)"
+    },
+    {
+      "type": "shell",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='Shell' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)"
+    },
+    {
+      "type": "wm",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='WM' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)",
+      "format": "{process-name} {version}"
+    },
+    {
+      "type": "terminalfont",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='Font' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)",
+      "format": "lua: local args = ...; len = string.len(args.name); return args.name"
+    },
+    {
+      "type": "cpu",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='CPU' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)"
+    },
+    {
+      "type": "gpu",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='GPU' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)"
+    },
+    {
+      "type": "memory",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='Memory' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)"
+    },
+    {
+      "type": "disk",
+      "key": "lua: local args = ...; local text = ''; local center=1; if icons==true then text=args.icon else text='Disk' center = math.ceil(string.len(text)/2) end; return string.format('%s%s\u001b[%dD%s', columns, keycolor, center , text)"
+    },
+    {
+      "type": "custom",
+      "key": "lua: return columns "
+    },
+    {
+      "type": "custom",
+      "key": "lua: return string.format('%s╰%s┴%s╯', linecolor, line, formatline)"
+    },
+    {
+      "type": "custom",
+      "key": "lua: return string.format('\u001b[%dC\u001b[31m● \u001b[32m● \u001b[33m● \u001b[34m● \u001b[35m● \u001b[36m● \u001b[37m●', math.ceil((linelen + formatlen+3-14)/2))"
+    }
+  ]
+}
